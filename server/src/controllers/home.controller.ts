@@ -2,18 +2,15 @@ import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
 
-class AuthController implements IControllerBase {
-    public paths = ['/']
+class HomeController implements IControllerBase {
     public router = express.Router()
-    public users
-    private requester
 
     constructor() {
         this.initRoutes()
     }
 
     public initRoutes(): IRouter {
-        this.router.post('/', this.get)
+        this.router.get('/', this.get)
         return this.router;
     }
 
@@ -22,4 +19,4 @@ class AuthController implements IControllerBase {
     }
 }
 
-export default AuthController
+export default HomeController
