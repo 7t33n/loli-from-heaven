@@ -4,7 +4,7 @@ import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
 
 class AuthController implements IControllerBase {
-    public paths = ['/signin', '/update', '/signout']
+    public paths = ['/']
     public router = express.Router()
     public users
     private requester
@@ -15,20 +15,12 @@ class AuthController implements IControllerBase {
     }
 
     public initRoutes(): IRouter {
-        this.router.post('/signin', this.post)
+        this.router.post('/', this.get)
         return this.router;
     }
 
-    post = async (req: Request, res: Response) => {
-        console.log('send to signin');
-        const response = await this.requester.send({
-            type: 'signin',
-            data: {
-                username: '1',
-                password: '1',
-            }
-        });
-        console.log(response);
+    get = async (req: Request, res: Response) => {
+		res.json({ api: 'work' });
     }
 
     private initRequester = () => (

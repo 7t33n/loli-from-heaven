@@ -3,7 +3,7 @@ import App from './app'
 import * as bodyParser from 'body-parser'
 import loggerMiddleware from './middleware/logger'
 
-import UserController from "./controllers/user.controller";
+import UserController from "./controllers/home.controller";
 
 
 const app = new App({
