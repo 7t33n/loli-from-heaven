@@ -1,4 +1,4 @@
-import App from './app'
+import App from './App'
 
 import * as bodyParser from 'body-parser'
 import loggerMiddleware from './middleware/logger'
