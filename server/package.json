@@ -6,7 +6,7 @@
   "scripts": {
     "start:express": "ts-node ./src/index.ts",
 	"dev:express": "nodemon ./src/index.ts",
-	"deploy": "pm2 del loli-server || true && yarn && pm2 start npm --name loli-server -- run start"
+	"deploy": "pm2 del loli-server || true && yarn && pm2 start npm --name loli-server -- run start:express"
   },
   "author": "",
   "license": "ISC",
