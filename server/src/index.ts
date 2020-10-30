@@ -15,7 +15,6 @@ const app = new App({
         bodyParser.json(),
         bodyParser.urlencoded({ extended: true }),
         loggerMiddleware,
-        gateway.middleware(),
     ]
 })
 
