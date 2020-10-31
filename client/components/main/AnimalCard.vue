@@ -1,6 +1,6 @@
 <template>
   <div class="animal-card">
-    <app-picture :src="image" class="animal-card__image" />
+    <app-picture :src="getImage" class="animal-card__image" />
     <div class="animal-card__info">
       <p class="animal-card__name">
         {{ getName }}
@@ -21,11 +21,12 @@
     border-radius: 16px;
     background: white;
     overflow: hidden;
-    box-shadow: 2px 3px 29px 0px rgba(0, 0, 0, .75);
+    box-shadow: 2px 3px 29px 0 rgba(0, 0, 0, .75);
 
     &__image {
       width: 100%;
-      height: 150px;
+      height: 240px;
+      object-fit: contain;
     }
 
     &__info {
@@ -76,7 +77,11 @@ export default {
     },
     image: {
       type: String,
-      default: '',
+      default: 'none',
+    },
+    type: {
+      type: String,
+      default: 'собака',
     },
   },
   computed: {
@@ -98,6 +103,11 @@ export default {
       return name === 'none'
         ? placeholder
         : `${name}, ${gender}`;
+    },
+    getImage() {
+      const { image, type } = this;
+      const placeholder = type === 'собака' ? 'dog.png' : 'cat.png';
+      return image === 'none' ? placeholder : image;
     },
   },
 };

@@ -1,14 +1,33 @@
 <template>
-  <animal-card
-    name="biba"
-    gender="мужской"
-    :age="5"
-    address="ulitsa pushkina dom kolotushkina"
-    image="image.jpg"
-  />
+  <div class="main">
+    <main-header />
+    <v-container>
+      <v-row>
+        <v-col :cols="3" />
+        <v-col :cols="9">
+          <v-row>
+            <v-col
+              v-for="n in $store.state.animals.current"
+              :key="n"
+              :cols="4"
+            >
+              <animal-card
+                :name="name"
+                :gender="gender"
+                :age="age"
+                :address="address"
+                :type="type"
+              />
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 <script>
 import AnimalCard from '~/components/main/AnimalCard';
+import MainHeader from '~/components/main/MainHeader';
 
 /**
  * @module pages/index
@@ -16,7 +35,7 @@ import AnimalCard from '~/components/main/AnimalCard';
  */
 
 export default {
-  components: { AnimalCard },
+  components: { MainHeader, AnimalCard },
   computed: {
     seoObject() {
       return {
@@ -24,6 +43,10 @@ export default {
         description: 'Описание главной Бойлерплейта',
       };
     },
+  },
+
+  async middleware({ store }) {
+    await store.dispatch('animals/FETCH_PAGES');
   },
 
   /**
