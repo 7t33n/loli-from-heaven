@@ -5,6 +5,7 @@ import loggerMiddleware from './middleware/logger'
 
 import HomeController from "./controllers/home.controller"
 import AuthController from "./controllers/auth.controller";
+import AdminController from "./controllers/admin.controller";
 
 
 const app = new App({
@@ -12,6 +13,7 @@ const app = new App({
     controllers: [
         new HomeController(),
         new AuthController(),
+        new AdminController(),
     ],
     middleWares: [
         bodyParser.json(),
