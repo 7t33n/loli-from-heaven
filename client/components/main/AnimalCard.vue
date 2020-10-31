@@ -18,15 +18,17 @@
   .animal-card {
     display: flex;
     flex-direction: column;
+    height: 430px;
     border-radius: 16px;
     background: white;
     overflow: hidden;
-    box-shadow: 2px 3px 29px 0 rgba(0, 0, 0, .75);
+    box-shadow: 2px 7px 12px -2px rgba(0, 0, 0, .2);
 
     &__image {
       width: 100%;
       height: 240px;
       object-fit: contain;
+      background: none;
     }
 
     &__info {
@@ -100,7 +102,7 @@ export default {
     getName() {
       const { name, gender } = this;
       const placeholder = gender === 'мужской' ? 'Хороший мальчик' : 'Хорошая девочка';
-      return name === 'none'
+      return name === 'без клички'
         ? placeholder
         : `${name}, ${gender}`;
     },
