@@ -54,6 +54,7 @@ export default {
   plugins: [
     // Doc: https://github.com/AlexandreBonaventure/vue-mq
     '@/plugins/device-detect',
+    '@/plugins/axios',
     '@/plugins/set-meta',
     '@/plugins/generalComponents',
     // Doc: https://element.eleme.io/#/en-US/
@@ -81,6 +82,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/vuetify',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
@@ -211,17 +213,14 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.baseURL,
+    baseURL: process.env.BASE_URL,
     proxy: true,
   },
   /*
   ** as proxy configuration
   */
   proxy: {
-    '/api': {
-      target: process.env.PROXY_API_TARGET,
-      auth: process.env.PROXY_API_AUTH,
-    },
+    '/api/': process.env.PROXY_API_TARGET,
   },
   /*
   ** Build configuration
