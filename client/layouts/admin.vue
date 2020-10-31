@@ -29,7 +29,9 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app>
-      header
+      <v-btn align="right" @click="logOut">
+        Выйти
+      </v-btn>
     </v-app-bar>
     <v-container fluid>
       <v-main>
@@ -46,6 +48,11 @@ export default {
   computed: {
     navigationMenu() {
       return this.$store.state.admin.pages;
+    },
+  },
+
+  methods: {
+    logOut() {
     },
   },
 };
