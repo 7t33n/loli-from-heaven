@@ -1,35 +1,22 @@
 <template>
-  <div
-    class="default"
-  >
-    <app-picture
-      src="image.jpg"
-      style="width: 500px; height: 300px;"
-    />
-    <app-icon
-      mod="icon"
-      name="icon"
-    />
-    <h1>nuxt-boilerplate</h1>
-    <p
-      class="p"
-    >
-      RATIO Project
-    </p>
-    <p
-      class="p"
-    >
-      current device: {{ $mq }}
-    </p>
-  </div>
+  <animal-card
+    name="biba"
+    gender="мужской"
+    :age="5"
+    address="ulitsa pushkina dom kolotushkina"
+    image="image.jpg"
+  />
 </template>
 <script>
+import AnimalCard from '~/components/main/AnimalCard';
+
 /**
  * @module pages/index
  * @vue-computed {Object} seoObject - Объект настройки SEO для данной страницы
  */
 
 export default {
+  components: { AnimalCard },
   computed: {
     seoObject() {
       return {
