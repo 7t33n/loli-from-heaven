@@ -54,6 +54,7 @@ export default {
   plugins: [
     // Doc: https://github.com/AlexandreBonaventure/vue-mq
     '@/plugins/device-detect',
+    '@/plugins/axios',
     '@/plugins/set-meta',
     '@/plugins/generalComponents',
     // Doc: https://element.eleme.io/#/en-US/
@@ -219,10 +220,7 @@ export default {
   ** as proxy configuration
   */
   proxy: {
-    '/api': {
-      target: process.env.PROXY_API_TARGET,
-      auth: process.env.PROXY_API_AUTH,
-    },
+    '/api/': process.env.PROXY_API_TARGET,
   },
   /*
   ** Build configuration
