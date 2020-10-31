@@ -2,7 +2,6 @@
 export const state = () => ({
   pages: [],
   current: {},
-  animalsTableFieldNames: {},
 });
 
 export const mutations = {

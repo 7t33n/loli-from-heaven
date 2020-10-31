@@ -43,7 +43,9 @@
     </v-app-bar>
     <v-container fluid>
       <v-main>
-        <h1>{{ pageHeader }}</h1>
+        <h1>
+          {{ pageHeader }}
+        </h1>
         <nuxt />
       </v-main>
     </v-container>

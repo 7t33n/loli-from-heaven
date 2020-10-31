@@ -1,34 +1,45 @@
 <template>
   <div>
-    <div>
-      <v-btn @click="downloadTemplate">
-        Скачать образец
-      </v-btn>
-      <v-btn @click="downloadData">
-        Скачать данные
-      </v-btn>
-      <v-btn @click="addItem">
-        Добавить строку
-      </v-btn>
-    </div>
-    <v-form>
-      <v-file-input label="Загрузить таблицу" />
-      <v-select
-        :items="itemsForSelect"
-        label="Поиск по"
-      />
-    </v-form>
+    <v-row>
+      <v-col>
+        <v-btn
+          v-if="availableButtons"
+          @click="downloadTemplate"
+        >
+          Скачать образец
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn
+          v-if="availableButtons"
+          @click="downloadData"
+        >
+          Скачать данные
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn
+          v-if="availableButtons"
+          @click="addItem"
+        >
+          Добавить строку
+        </v-btn>
+      </v-col>
+    </v-row>
+    <v-file-input label="Загрузить таблицу" />
     <v-text-field
       v-model="search"
       append-icon="mdi-magnify"
-      label="Search"
+      label="Поиск"
       single-line
       hide-details
     />
     <v-data-table
-      :headers="headers"
+      :headers="tableHeaders"
       :items="tableItemsMock"
       :items-per-page="5"
+      :search="search"
+      fixed-header
       class="elevation-1"
     />
   </div>
@@ -57,7 +68,7 @@ export default {
       tableItemsMock: [
         {
           id: '1665з-20',
-          kind: 'собака',
+          record: 'собака',
           age: 2016,
           weight: 25,
           name: 'Варя',
@@ -71,12 +82,16 @@ export default {
     itemsForSelect() {
       return Object.keys(this.tableItemsMock[0]);
     },
+    availableButtons() {
+      return this.$store.state.admin.current.can;
+    },
     tableHeaders() {
-      return this.$store.state.currentPage.fields;
+      console.log(this.$store.state.admin.current.data.table);
+      return this.$store.state.admin.current.data.table;
     },
     tableItems() {
       // return this.$store.state.currentPage.items.filter(item => item.)
-      return this.$store.state.currentPage.items;
+      return this.$store.state.admin.current.data.items;
     },
   },
 
