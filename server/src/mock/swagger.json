@@ -1,0 +1,29 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Swagger documentation",
+    "version": "1.0.0",
+    "title": "Swagger Doc",
+    "contact": {
+      "email": "mroxotnik.app@gmail.com"
+    }
+  },
+  "host": "https://api-loli.7t33n.ru/",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "Directory",
+      "description": "Справочники"
+    }
+  ],
+  "paths": {
+    "/directory/sex": {
+      "get": {
+        "tags": ["directory"],
+        "produces": [
+          "application/json"
+        ]
+      }
+    }
+  }
+}
