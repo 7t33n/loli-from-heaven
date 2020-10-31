@@ -20,6 +20,7 @@ class AdminController implements IControllerBase {
             {
                 id: 1,
                 name: 'Животные',
+                can: ['UPDATE', 'DELETE'],
                 url: '/pages/1/',
             },
         ])
@@ -32,20 +33,16 @@ class AdminController implements IControllerBase {
             res.json({
                 id: 1,
                 name: 'Животные',
+                can: ['UPDATE', 'DELETE'],
+                fields: {
+                    name: 'Имя животного',
+                    year: 'Возраст, год',
+                },
                 items: [
                     {
                         id: 101,
-                        can: ['UPDATE', 'DELETE'],
-                        fields: {
-                            name: {
-                                key: 'name',
-                                value: 'Имя животного',
-                            },
-                            year: {
-                                key: 'year',
-                                value: 'Возраст, год',
-                            }
-                        }
+                        name: 'Тут будет кличка животного',
+                        year: 'Тут будет возраст животного',
                     }
                 ],
             })
