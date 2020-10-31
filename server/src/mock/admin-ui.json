@@ -256,19 +256,27 @@
       "table": [
         {
           "text": "№ п/п",
-          "value": "id"
-        },
-        {
-          "text": "Адрес",
-          "value": "address"
+          "value": "ID"
         },
         {
           "text": "Название",
-          "value": "name"
+          "value": "Name"
+        },
+        {
+          "text": "Адрес",
+          "value": "Address"
         },
         {
           "text": "Руководитель приюта",
-          "value": "director"
+          "value": "ChiefName"
+        },
+        {
+          "text": "Телефон",
+          "value": "Phone[0].Phone"
+        },
+        {
+          "text": "Административный Округ",
+          "value": "AdmArea"
         }
       ],
       "items": []
