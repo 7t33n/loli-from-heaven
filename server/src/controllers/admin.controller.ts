@@ -17,25 +17,17 @@ class AdminController implements IControllerBase {
     }
 
     getPages = async (req: Request, res: Response) => {
-        res.json([
-            {
-                id: 1,
-                name: 'Животные',
-                can: ['UPDATE', 'DELETE'],
-                url: '/pages/1/',
-            },
-            {
-                id: 1,
-                name: 'Зверь',
-                can: ['UPDATE'],
-                url: '/pages/2/',
-            },
-        ])
+        res.json(adminUI.map((item) => ({...item, data: {}})))
     };
 
     getPageById = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const response = adminUI.find((item) => (item.id === parseInt(id, 10)));
+        const response = adminUI
+            .find((item, index) => (index === parseInt(id, 10)))
+        response.data = {
+            table: response.data.table,
+            items: require(`${__dirname}/../${response.url}`)
+        }
         if (response) {
             res.json(response);
         }

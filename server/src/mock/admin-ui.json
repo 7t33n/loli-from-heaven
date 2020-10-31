@@ -1,8 +1,8 @@
 [
   {
-    "id": 1,
+    "type": "MAIN",
     "name": "Животные",
-    "value": "/mock/animals.json",
+    "url": "/mock/animals.json",
     "can": [],
     "importStatus": {
       "file": "",
@@ -41,6 +41,294 @@
         {
           "text": "Метка",
           "value": "additional.markerId"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "MAIN",
+    "name": "Пользователи",
+    "url": "/mock/users.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "MAIN",
+    "name": "Заявки",
+    "url": "/mock/application.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Уши",
+    "url": "/mock/ears.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Вид",
+    "url": "/mock/kind.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Хвост",
+    "url": "/mock/tail.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Пол",
+    "url": "/mock/sex.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Порода",
+    "url": "/mock/breed.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Окрас",
+    "url": "/mock/color.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Шерсть",
+    "url": "/mock/fur.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Размер",
+    "url": "/mock/size.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Приюты",
+    "url": "/mock/shelter.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Адрес",
+          "value": "address"
+        },
+        {
+          "text": "Название",
+          "value": "name"
+        },
+        {
+          "text": "Руководитель приюта",
+          "value": "director"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Анамнез",
+    "url": "/mock/anamnesis.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Префектуры",
+    "url": "/mock/prefectures.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
+        }
+      ],
+      "items": []
+    }
+  },
+  {
+    "type": "DIRECTORY",
+    "name": "Эксплуатационные организации",
+    "url": "/mock/organization.json",
+    "can": [],
+    "importStatus": null,
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "Свойство",
+          "value": "value"
         }
       ],
       "items": []
