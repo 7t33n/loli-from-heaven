@@ -23,6 +23,12 @@ class AdminController implements IControllerBase {
                 can: ['UPDATE', 'DELETE'],
                 url: '/pages/1/',
             },
+            {
+                id: 1,
+                name: 'Зверь',
+                can: ['UPDATE'],
+                url: '/pages/2/',
+            },
         ])
     };
 
@@ -34,6 +40,10 @@ class AdminController implements IControllerBase {
                 id: 1,
                 name: 'Животные',
                 can: ['UPDATE', 'DELETE'],
+                importStatus: {
+                    file: 'example_import_data.xlsx',
+                    url: '/api/v1/animals/upload/',
+                },
                 fields: {
                     name: 'Имя животного',
                     year: 'Возраст, год',
@@ -43,6 +53,22 @@ class AdminController implements IControllerBase {
                         id: 101,
                         name: 'Тут будет кличка животного',
                         year: 'Тут будет возраст животного',
+                    }
+                ],
+            })
+        } else if (id === '2') {
+            res.json({
+                id: 2,
+                name: 'Пример',
+                can: ['UPDATE'],
+                importStatus: null,
+                fields: {
+                    name: 'Пример',
+                },
+                items: [
+                    {
+                        id: 102,
+                        name: 'Тут будет кличка пример',
                     }
                 ],
             })
