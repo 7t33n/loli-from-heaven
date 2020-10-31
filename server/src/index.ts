@@ -10,6 +10,7 @@ import HomeController from "./controllers/home.controller";
 import AuthController from "./controllers/auth.controller";
 import AdminController from "./controllers/admin.controller";
 import AnimalsController from "./controllers/animals.controller";
+import ShelterController from "./controllers/shelter.controller";
 import {IMPORT_QUEUE} from "./const/queue";
 
 const cron = nodeCron.schedule('* * * * * *', () =>  {
@@ -30,6 +31,7 @@ const app = new App({
         new AuthController(),
         new AdminController(),
         new AnimalsController(cron),
+        new ShelterController(),
     ],
     middleWares: [
         bodyParser.json(),
