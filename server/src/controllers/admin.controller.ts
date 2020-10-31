@@ -58,7 +58,7 @@ class AdminController implements IControllerBase {
             })
         } else if (id === '2') {
             res.json({
-                id: 1,
+                id: 2,
                 name: 'Звери ебаные',
                 can: ['UPDATE'],
                 importStatus: null,
