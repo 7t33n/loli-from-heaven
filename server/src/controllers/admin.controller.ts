@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
-import IControllerBase from './../interfaces/IControllerBase.interface'
+import IControllerBase from './../interfaces/IControllerBase.interface';
+import * as adminUI from './../mock/admin-ui.json';
 
 class AdminController implements IControllerBase {
     public router = express.Router()
@@ -34,47 +35,11 @@ class AdminController implements IControllerBase {
 
     getPageById = async (req: Request, res: Response) => {
         const { id } = req.params;
-        // @ts-ignore
-        if (id === '1') {
-            res.json({
-                id: 1,
-                name: 'Животные',
-                can: ['UPDATE', 'DELETE'],
-                importStatus: {
-                    file: 'example_import_data.xlsx',
-                    url: '/api/v1/animals/upload/',
-                },
-                fields: {
-                    name: 'Имя животного',
-                    year: 'Возраст, год',
-                },
-                items: [
-                    {
-                        id: 101,
-                        name: 'Тут будет кличка животного',
-                        year: 'Тут будет возраст животного',
-                    }
-                ],
-            })
-        } else if (id === '2') {
-            res.json({
-                id: 2,
-                name: 'Пример',
-                can: ['UPDATE'],
-                importStatus: null,
-                fields: {
-                    name: 'Пример',
-                },
-                items: [
-                    {
-                        id: 102,
-                        name: 'Тут будет кличка пример',
-                    }
-                ],
-            })
-        } else {
-            res.status(404).send('Not Found');
+        const response = adminUI.find((item) => (item.id === parseInt(id, 10)));
+        if (response) {
+            res.json(response);
         }
+        res.status(404).send('Not Found');
     };
 }
 

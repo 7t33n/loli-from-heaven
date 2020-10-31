@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "name": "Животные",
+    "value": "/mock/animals.json",
+    "can": [],
+    "importStatus": {
+      "file": "",
+      "url": "/api/v1/animals/upload/"
+    },
+    "data": {
+      "table": [
+        {
+          "text": "№ п/п",
+          "value": "id"
+        },
+        {
+          "text": "учета №",
+          "value": "record"
+        },
+        {
+          "text": "Кличка",
+          "value": "general.nickname"
+        },
+        {
+          "text": "Вид",
+          "value": "general.kind"
+        },
+        {
+          "text": "Пол",
+          "value": "general.sex"
+        },
+        {
+          "text": "Приют",
+          "value": "responsible.address"
+        },
+        {
+          "text": "Состояние",
+          "value": "health.anamnesis"
+        },
+        {
+          "text": "Метка",
+          "value": "additional.markerId"
+        }
+      ],
+      "items": []
+    }
+  }
+]
