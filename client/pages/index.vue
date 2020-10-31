@@ -44,7 +44,7 @@ export default {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: transparent;
+      background-color: white;
     }
 
     &__content {

@@ -136,6 +136,7 @@ export default {
     margin-top: 10px;
     padding: 50px 35px;
     border-radius: 16px;
+    background: white;
     box-shadow: 2px 7px 12px -2px rgba(0, 0, 0, .2);
 
     &__title {
