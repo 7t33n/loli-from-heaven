@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e83e3437-4899-47fa-b773-ca02fca862d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/components/general/LayoutHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/main/AnimalFilter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/AnimalList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/general/AppPicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/general/AppPicture.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/main/AnimalCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/main/AnimalCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/main/AnimalFilter" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/main/MainHeader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/images/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/images/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/animals.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/animals.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jch7K4drAZCaEfLfHgfo9w0ybz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/assets/fonts" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/static/images" />
+      <recent name="$PROJECT_DIR$/client/pages" />
+      <recent name="$PROJECT_DIR$/client/assets/fonts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/assets/fonts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e83e3437-4899-47fa-b773-ca02fca862d9" name="Default Changelist" comment="" />
+      <created>1604109120945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604109120945</updated>
+      <workItem from="1604109122985" duration="3271000" />
+      <workItem from="1604136333222" duration="15537000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="589" y="348" key="#ESLint" timestamp="1604113351610">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="589" y="348" key="#ESLint/0.0.1440.900@0.0.1440.900" timestamp="1604113351610" />
+    <state x="426" y="255" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604137429597">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="426" y="255" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1604137429597" />
+    <state width="1419" height="240" key="GridCell.Tab.0.bottom" timestamp="1604113375179">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1604113375179" />
+    <state width="1419" height="240" key="GridCell.Tab.0.center" timestamp="1604113375176">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1604113375176" />
+    <state width="1419" height="240" key="GridCell.Tab.0.left" timestamp="1604113375163">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1604113375163" />
+    <state width="1419" height="240" key="GridCell.Tab.0.right" timestamp="1604113375178">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1604113375178" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1604112881754">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1604112881754" />
+    <state x="428" y="189" width="584" height="580" key="find.popup" timestamp="1604158587566">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="428" y="189" width="584" height="580" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1604158587566" />
+    <state x="428" y="189" width="584" height="522" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1604151455689" />
+  </component>
+</project>
