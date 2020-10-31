@@ -36,7 +36,7 @@
     />
     <v-data-table
       :headers="tableHeaders"
-      :items="tableItemsMock"
+      :items="tableItems"
       :items-per-page="5"
       :search="search"
       fixed-header
@@ -97,7 +97,6 @@ export default {
 
   async middleware({ store, route }) {
     await store.dispatch('admin/FETCH_PAGES');
-    console.log(route.params.id);
     await store.dispatch('admin/FETCH_PAGE_BY_ID', route.params.id);
   },
 
