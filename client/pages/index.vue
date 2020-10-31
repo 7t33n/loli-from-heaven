@@ -1,78 +1,69 @@
 <template>
   <div class="main">
-    <app-picture class="main__background" src="bg.png" />
-    <div class="main__content">
-      <h1 class="main__title">
-        Возьми друга <br> из приюта!
-      </h1>
-      <p class="main__description">
-        Каждый ждёт, когда найдется его человек. <br>
-        Вы можете выбрать себе друга и забрать к себе <br>
-        домой, оставив заявку.
-      </p>
-      <a class="main__button" href="/AnimalList">Выбрать друга</a>
-    </div>
+    <main-header />
+    <v-container>
+      <v-row>
+        <v-col :cols="3" />
+        <v-col :cols="9">
+          <v-row>
+            <v-col
+              v-for="n in 4"
+              :key="n"
+              :cols="4"
+            >
+              <animal-card
+                name="Бобик"
+                gender="мужской"
+                :age="5"
+                address="ул. Ленина 72"
+                type="собака"
+              />
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
-
 <script>
-import AppPicture from '@/components/general/AppPicture';
+import AnimalCard from '~/components/main/AnimalCard';
+import MainHeader from '~/components/main/MainHeader';
+
+/**
+ * @module pages/index
+ * @vue-computed {Object} seoObject - Объект настройки SEO для данной страницы
+ */
 
 export default {
-  components: { AppPicture },
+  components: { MainHeader, AnimalCard },
   computed: {
-    /**
-     * Подключение SEO с помощью тега функция head прдоставляемой Nuxt
-     * @returns {{meta, title: *}}
-     */
-    head() {
-      return this.$setMeta(this.$store, this.seoObject);
+    seoObject() {
+      return {
+        title: 'Главная страница Boilerplate',
+        description: 'Описание главной Бойлерплейта',
+      };
     },
+  },
+
+  async middleware({ store }) {
+    await store.dispatch('animals/FETCH_PAGES');
+  },
+
+  /**
+   * Подключение SEO с помощью тега функция head прдоставляемой Nuxt
+   * @returns {{meta, title: *}}
+   */
+  head() {
+    return this.$setMeta(this.$store, this.seoObject);
   },
 };
 </script>
-
 <style lang="scss" scoped>
-  .main {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    &__background {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: transparent;
-    }
-
-    &__content {
-      position: absolute;
-      padding: 90px 64px;
-    }
-
-    &__title {
-      font-family: "Montserrat-Bold", sans-serif;
-      font-size: 72px;
-    }
-
-    &__description {
-      margin-top: 45px;
-      margin-bottom: 48px;
-      font-size: 22px;
-      color: #212121;
-    }
-
-    &__button {
-      padding: 14px 50px;
-      border-radius: 8px;
-      background: #3CA6CD;
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-  }
+.default {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 </style>

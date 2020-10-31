@@ -24,16 +24,40 @@
             <v-list-item-title>Главная</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item
-          v-for="item in navigationMenu"
-          :key="item.id"
-          nuxt
-          :to="`/admin/${item.id}`"
+        <template v-for="(item, index) in navigationMenu">
+          <v-list-item
+            v-if="item.type === 'MAIN'"
+            :key="index"
+            nuxt
+            :to="`/admin/${index}`"
+          >
+            <v-list-item-content>
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+        <v-list-group
+          :value="true"
+          no-action
         >
-          <v-list-item-content>
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+          <template v-slot:activator>
+            <v-list-item-title>
+              Справочник
+            </v-list-item-title>
+          </template>
+          <template v-for="(item, index) in navigationMenu">
+            <v-list-item
+              v-if="item.type === 'DIRECTORY'"
+              :key="index"
+              nuxt-link
+              :to="`/admin/${index}`"
+            >
+              <v-list-item-content :title="item.name">
+                <v-list-item-title>{{ item.name }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app>

@@ -1,9 +1,6 @@
 <template>
   <div class="page">
-    <v-app>
-      <layout-header />
-      <nuxt />
-    </v-app>
+    <nuxt />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -11,10 +8,3 @@
   height: 100%;
 }
 </style>
-<script>
-import LayoutHeader from '@/components/general/LayoutHeader';
-
-export default {
-  components: { LayoutHeader },
-};
-</script>
