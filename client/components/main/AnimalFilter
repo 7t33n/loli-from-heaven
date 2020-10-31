@@ -1,0 +1,39 @@
+<template>
+  <div class="animal-filter">
+    helo
+  </div>
+</template>
+<style lang="scss" scoped>
+.animal-filter {
+  display: flex;
+}
+</style>
+<script>
+
+export default {
+  name: 'AnimalFilter',
+  components: { },
+  props: {
+    name: {
+      type: String,
+      default: 'none',
+    },
+    gender: {
+      type: String,
+      default: 'мужской',
+    },
+    age: {
+      type: Number,
+      default: 0,
+    },
+    address: {
+      type: String,
+      default: '',
+    },
+    image: {
+      type: String,
+      default: '',
+    },
+  },
+};
+</script>`

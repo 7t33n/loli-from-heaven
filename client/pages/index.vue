@@ -1,35 +1,41 @@
 <template>
-  <div
-    class="default"
-  >
-    <app-picture
-      src="image.jpg"
-      style="width: 500px; height: 300px;"
-    />
-    <app-icon
-      mod="icon"
-      name="icon"
-    />
-    <h1>nuxt-boilerplate</h1>
-    <p
-      class="p"
-    >
-      RATIO Project
-    </p>
-    <p
-      class="p"
-    >
-      current device: {{ $mq }}
-    </p>
+  <div class="main">
+    <main-header />
+    <v-container>
+      <v-row>
+        <v-col :cols="3" />
+        <v-col :cols="9">
+          <v-row>
+            <v-col
+              v-for="n in 4"
+              :key="n"
+              :cols="4"
+            >
+              <animal-card
+                name="Бобик"
+                gender="мужской"
+                :age="5"
+                address="ул. Ленина 72"
+                type="собака"
+              />
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 <script>
+import AnimalCard from '~/components/main/AnimalCard';
+import MainHeader from '~/components/main/MainHeader';
+
 /**
  * @module pages/index
  * @vue-computed {Object} seoObject - Объект настройки SEO для данной страницы
  */
 
 export default {
+  components: { MainHeader, AnimalCard },
   computed: {
     seoObject() {
       return {
@@ -37,6 +43,10 @@ export default {
         description: 'Описание главной Бойлерплейта',
       };
     },
+  },
+
+  async middleware({ store }) {
+    await store.dispatch('animals/FETCH_PAGES');
   },
 
   /**

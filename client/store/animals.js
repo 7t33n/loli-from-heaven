@@ -17,16 +17,8 @@ export const mutations = {
 export const actions = {
   async FETCH_PAGES({ commit }) {
     try {
-      const response = await this.$axios.$get('/api/v1/admin/pages/');
+      const response = await this.$axios.$get('/api/v1/animals/');
       commit('SET_PAGES', response);
-    } catch (e) {
-      console.error(e);
-    }
-  },
-  async FETCH_PAGE_BY_ID({ commit }, id) {
-    try {
-      const response = await this.$axios.$get(`/api/v1/admin/pages/${id}/`);
-      commit('SET_CURRENT_PAGE', response);
     } catch (e) {
       console.error(e);
     }

@@ -1,6 +1,8 @@
 import eslintFriendlyFormatter from 'eslint-friendly-formatter';
 import fs from 'fs';
 
+import ru from './helpers/vuetify.js';
+
 const envName = fs.existsSync('.env') ? '.env' : '.env.example';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -82,7 +84,12 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/vuetify', {
+      lang: {
+        locales: { ru },
+        current: 'ru',
+      },
+    }],
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module

@@ -1,12 +1,12 @@
 <template>
   <div>
-    index-admin
+    index
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index',
+  name: 'Index',
 
   async middleware({ store }) {
     await store.dispatch('admin/FETCH_PAGES');
