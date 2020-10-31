@@ -1,13 +1,15 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
-import fileXLSXParse from "../helpers/fileXLSXParse";
+import {IMPORT_QUEUE} from "../const/queue";
 
 class AnimalsController implements IControllerBase {
     public router = express.Router()
+    public cron: any
 
-    constructor() {
-        this.initRoutes()
+    constructor(cron) {
+        this.cron = cron;
+        this.initRoutes();
     }
 
     public initRoutes(): IRouter {
@@ -17,7 +19,7 @@ class AnimalsController implements IControllerBase {
     }
 
     getAllAnimals = async (req: Request, res: Response) => {
-       res.json({});
+        res.json({ animals: 'true' });
     };
 
     animalsImport = async (req: Request, res: Response) => {
@@ -36,7 +38,12 @@ class AnimalsController implements IControllerBase {
         });
         console.log();
         try {
-            dataset.mv(`${__dirname}/../uploads/imports/${new Date().getTime() / 1000}.xlsx`);
+            const filename = `${new Date().getTime()}.xlsx`;
+            dataset.mv(`${__dirname}/../uploads/imports/${filename}`);
+            IMPORT_QUEUE.push(filename);
+            if (this.cron.status !== 'running') {
+                this.cron.start();
+            }
         } catch (e) {
             console.log(e);
         }
