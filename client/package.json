@@ -36,7 +36,7 @@
     "@nuxtjs/svg-sprite": "^0.4.10",
     "element-ui": "^2.4.11",
     "lazysizes": "^5.2.0",
-    "nuxt": "^2.14.5",
+    "nuxt": "^2.14.7",
     "nuxt-user-agent": "^1.2.2",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.3.6",

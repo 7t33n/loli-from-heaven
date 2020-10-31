@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
-import IControllerBase from './../interfaces/IControllerBase.interface'
+import IControllerBase from './../interfaces/IControllerBase.interface';
+import * as adminUI from './../mock/admin-ui.json';
 
 class AdminController implements IControllerBase {
     public router = express.Router()
@@ -23,32 +24,22 @@ class AdminController implements IControllerBase {
                 can: ['UPDATE', 'DELETE'],
                 url: '/pages/1/',
             },
+            {
+                id: 1,
+                name: 'Зверь',
+                can: ['UPDATE'],
+                url: '/pages/2/',
+            },
         ])
     };
 
     getPageById = async (req: Request, res: Response) => {
         const { id } = req.params;
-        // @ts-ignore
-        if (id === '1') {
-            res.json({
-                id: 1,
-                name: 'Животные',
-                can: ['UPDATE', 'DELETE'],
-                fields: {
-                    name: 'Имя животного',
-                    year: 'Возраст, год',
-                },
-                items: [
-                    {
-                        id: 101,
-                        name: 'Тут будет кличка животного',
-                        year: 'Тут будет возраст животного',
-                    }
-                ],
-            })
-        } else {
-            res.status(404).send('Not Found');
+        const response = adminUI.find((item) => (item.id === parseInt(id, 10)));
+        if (response) {
+            res.json(response);
         }
+        res.status(404).send('Not Found');
     };
 }
 

@@ -20,6 +20,7 @@
     "express-fileupload": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.11",
+    "node-cron": "^2.0.3",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "pug": "^3.0.0",
