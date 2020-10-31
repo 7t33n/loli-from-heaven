@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e83e3437-4899-47fa-b773-ca02fca862d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/general/LayoutHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pages/AnimalList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/cat/cat--1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/cat/cat--1x.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/cat/cat--2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/cat/cat--2x.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/cat/cat--lqip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/dog/dog--1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/dog/dog--1x.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/dog/dog--2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/dog/dog--2x.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/gen/dog/dog--lqip.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/general/AppPicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/general/AppPicture.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/main/AnimalCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/main/AnimalCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/main/AnimalFilter" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/main/MainHeader.vue" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/layouts/admin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/admin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/admin/_id/edit/_edit_id.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/animals.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/animals.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +51,12 @@
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/assets/fonts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/static/images" />
       <recent name="$PROJECT_DIR$/client/pages" />
-      <recent name="$PROJECT_DIR$/client/assets/fonts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/assets/fonts" />
     </key>
   </component>
