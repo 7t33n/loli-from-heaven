@@ -59,16 +59,16 @@ class AdminController implements IControllerBase {
         } else if (id === '2') {
             res.json({
                 id: 2,
-                name: 'Звери ебаные',
+                name: 'Пример',
                 can: ['UPDATE'],
                 importStatus: null,
                 fields: {
-                    name: 'Зверь',
+                    name: 'Пример',
                 },
                 items: [
                     {
                         id: 102,
-                        name: 'Тут будет кличка зверя',
+                        name: 'Тут будет кличка пример',
                     }
                 ],
             })
