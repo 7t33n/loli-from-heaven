@@ -1,4 +1,3 @@
-import passport from 'passport';
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
