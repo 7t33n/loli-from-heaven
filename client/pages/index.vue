@@ -7,16 +7,16 @@
         <v-col :cols="9">
           <v-row>
             <v-col
-              v-for="n in $store.state.animals.current"
+              v-for="n in 4"
               :key="n"
               :cols="4"
             >
               <animal-card
-                :name="name"
-                :gender="gender"
-                :age="age"
-                :address="address"
-                :type="type"
+                name="Бобик"
+                gender="мужской"
+                :age="5"
+                address="ул. Ленина 72"
+                type="собака"
               />
             </v-col>
           </v-row>
