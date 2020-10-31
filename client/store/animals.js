@@ -1,13 +1,13 @@
 /* eslint-disable no-shadow */
 export const state = () => ({
   pages: [],
-  current: {},
+  current: [],
   animalsTableFieldNames: {},
 });
 
 export const mutations = {
   SET_PAGES(state, payload) {
-    state.pages = payload;
+    state.current = payload.items;
   },
   SET_CURRENT_PAGE(state, payload) {
     state.current = payload;
