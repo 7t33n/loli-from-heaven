@@ -156,5 +156,5 @@ deathReason.hasMany(Animal);
 Reasonout.hasMany(Animal);
 Reasoneuth.hasMany(Animal);
 
-Animal.sync({ force: true })
+Animal.sync()
     .then(() => console.log('Animal table was created!'));
