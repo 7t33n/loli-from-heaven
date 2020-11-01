@@ -6,7 +6,7 @@ export const state = () => ({
 
 export const mutations = {
   SET_DATA(state, payload) {
-    state.data = payload.items;
+    state.data = payload;
   },
   SET_CURRENT_PAGE(state, payload) {
     state.current = payload;
@@ -16,7 +16,7 @@ export const mutations = {
 export const actions = {
   async FETCH_DATA({ commit }) {
     try {
-      const response = await this.$axios.$get('/api/v1/animals/');
+      const response = await this.$axios.$get('/api/v1/animals');
       commit('SET_DATA', response);
     } catch (e) {
       console.error(e);
@@ -24,7 +24,7 @@ export const actions = {
   },
   async FETCH_PAGE_BY_ID({ commit }, id) {
     try {
-      const response = await this.$axios.$get(`/api/v1/animals/${id}/`);
+      const response = await this.$axios.$get(`/api/v1/animal/${id}/`);
       commit('SET_CURRENT_PAGE', response);
     } catch (e) {
       console.error(e);

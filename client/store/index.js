@@ -9,8 +9,10 @@ export const actions = {
    * Функция запускающаяся на сервере при рендере
    * @param context { Object } - Стандартный контекст nuxt
    */
-  nuxtServerInit({ dispatch }) {
+  async nuxtServerInit({ dispatch }) {
     initMetrics(dispatch);
+    await dispatch('directory/FETCH_KINDS');
+    await dispatch('directory/FETCH_SEX');
   },
 };
 

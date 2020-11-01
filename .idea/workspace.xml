@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e83e3437-4899-47fa-b773-ca02fca862d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/pages/AnimalAdoptSuccess.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pages/AnimalHomeless.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pages/AnimalHomelessSuccess.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/main-bg1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/images/main-bg2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/shelters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/store/directory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/general/LayoutHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/general/LayoutHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/AnimalAdopt/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/AnimalAdopt/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/main/AnimalFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/main/AnimalFilter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/AnimalHomeless.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/AnimalHomeless.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/AnimalList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/AnimalList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/animals.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/animals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/shelters.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/shelters.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

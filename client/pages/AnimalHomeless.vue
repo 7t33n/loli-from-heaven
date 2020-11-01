@@ -19,11 +19,17 @@
         placeholder="*E-mail" name="email"
         type="text" class="animal-homeless__input"
       >
+      <v-select
+        :items="getShelters"
+        label="Выберите адрес"
+        class="animal-homeless__select"
+        dense
+        solo
+      />
       <textarea
         class="animal-homeless__textarea" name="comment"
         placeholder="Ваш комментарий"
       />
-      <pre>{{ this.$store.state.shelters.data }}</pre>
       <button class="animal-homeless__button">
         отправить заявку
       </button>
@@ -35,9 +41,13 @@ import AnimalBackButton from '@/components/general/AnimalBackButton';
 
 export default {
   components: { AnimalBackButton },
+  computed: {
+    getShelters() {
+      return this.$store.state.shelters.data.map(item => item.address);
+    },
+  },
   async middleware({ store }) {
     await store.dispatch('shelters/FETCH_DATA');
-    console.log(this.$store.state.shelters.data);
   },
 };
 </script>
@@ -88,6 +98,10 @@ export default {
       transform: rotate(12deg);
       width: 260px;
       height: 294px;
+    }
+
+    &__select {
+      margin-top: 30px;
     }
 
     &__input {
