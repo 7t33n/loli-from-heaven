@@ -83,7 +83,6 @@ export default {
 <style lang="scss" scoped>
 .app-picture {
   border-radius: 5px;
-  background-color: $loading-color;
 
   img {
     width: 100%;

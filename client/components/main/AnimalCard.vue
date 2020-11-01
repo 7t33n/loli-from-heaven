@@ -2,20 +2,24 @@
   <div class="animal-card">
     <app-picture :src="getImage" class="animal-card__image" />
     <div class="animal-card__info">
-      <p class="animal-card__name">
+      <div class="animal-card__name">
         {{ getName }}
-      </p>
-      <p class="animal-card__age">
+      </div>
+      <div class="animal-card__age">
         {{ getAge }}
-      </p>
-      <p class="animal-card__address">
+      </div>
+      <div class="animal-card__address">
         {{ address }}
-      </p>
+      </div>
     </div>
+    <nuxt-link class="animal-card__button" :to="`AnimalDetails/${id}`">
+      Подробнее
+    </nuxt-link>
   </div>
 </template>
 <style lang="scss" scoped>
   .animal-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 430px;
@@ -52,6 +56,21 @@
       margin-top: 16px;
       font-size: 14px;
     }
+
+    &__button {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 14px 50px;
+      background: #3CA6CD;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
   }
 </style>
 <script>
@@ -84,6 +103,10 @@ export default {
     type: {
       type: String,
       default: 'собака',
+    },
+    id: {
+      type: [Number, String],
+      default: '',
     },
   },
   computed: {

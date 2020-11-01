@@ -1,8 +1,9 @@
 <template>
   <nav class="layout-header">
+    <a class="layout-header__link" href="/">Главная</a>
     <a class="layout-header__link" href="/AnimalList">Выбрать друга</a>
-    <a class="layout-header__link" href="/AnimalList">Приюты</a>
-    <a class="layout-header__link" href="/AnimalList">Сообщить о беспризорнике</a>
+    <a class="layout-header__link" href="/AnimalShelters">Приюты</a>
+    <a class="layout-header__link" href="/AnimalHomeless">Сообщить о беспризорнике</a>
     <div class="layout-header__divider" />
     <a class="layout-header__link" href="/AnimalList">FAQ</a>
     <a class="layout-header__link" href="/AnimalList">О нас</a>

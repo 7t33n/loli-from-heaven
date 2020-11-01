@@ -19,16 +19,18 @@
               v-for="(item, n) in animals"
               :key="n"
               :cols="4"
+              lg="4"
               md="6"
               sm="6"
             >
               <animal-card
-                :name="item.general.nickname"
-                :gender="item.general.sex"
-                :age="item.general.year"
-                :address="item.responsible.address"
-                :type="item.general.kind"
-                :image="item.img"
+                :id="item.id"
+                :type="kinds.find((kind) => kind.id === item.KindId).value"
+                :gender="sex.find((sexs) => sexs.id === item.SexId).value"
+                :age="item.age"
+                :name="item.name"
+                :address="shelters.find((shelter) => shelter.id === 1).address"
+                :img="item.image"
               />
             </v-col>
           </v-row>
@@ -56,12 +58,22 @@ export default {
       };
     },
     animals() {
-      return this.$store.state.animals.current;
+      return this.$store.state.animals.data;
+    },
+    shelters() {
+      return this.$store.state.shelters.data;
+    },
+    kinds() {
+      return this.$store.state.directory.kinds;
+    },
+    sex() {
+      return this.$store.state.directory.sex;
     },
   },
 
   async middleware({ store }) {
-    await store.dispatch('animals/FETCH_PAGES');
+    await store.dispatch('animals/FETCH_DATA');
+    await store.dispatch('shelters/FETCH_DATA');
   },
 };
 </script>
