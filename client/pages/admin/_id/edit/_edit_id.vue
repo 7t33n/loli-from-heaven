@@ -1,13 +1,22 @@
 <template>
   <v-form>
-    <h2>
-      Edit or add item
-    </h2>
+    <v-row>
+      <v-col>
+        <h2>
+          {{ actionMode || 'Тип операции' }}
+        </h2>
+      </v-col>
+      <v-col>
+        <v-btn color="red lighten-3" @click="deleteItem">
+          удалить запись
+        </v-btn>
+      </v-col>
+    </v-row>
     <br>
     <v-text-field
       v-if="true"
-      label="Outlined"
-      placeholder="Placeholder"
+      label="Поле для заполнения"
+      placeholder="значение поля"
       outlined
     />
     <v-autocomplete
@@ -32,17 +41,25 @@ export default {
 
   layout: 'admin',
 
-  async middleware({ store }) {
+  async middleware({ store, route }) {
     await store.dispatch('admin/FETCH_PAGES');
+    await store.dispatch('admin/FETCH_PAGE_BY_ID', route.params.id);
+  },
+
+  data() {
+    return {
+      // 'edit', or 'add'
+      actionMode: '',
+    };
   },
 
   methods: {
     handleSubmit() {
+      console.log(`/admin/${this.$store.state.admin.current.type}`);
+      // this.$router.push(`/admin/${this.$store.state.admin.current.type}`);
+    },
+    deleteItem() {
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

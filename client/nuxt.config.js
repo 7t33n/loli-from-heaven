@@ -89,6 +89,7 @@ export default {
         locales: { ru },
         current: 'ru',
       },
+      theme: { dark: false },
     }],
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
