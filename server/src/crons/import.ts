@@ -45,7 +45,7 @@ const getSocializedStatus = (social) => (social === 'да' ? 'социализи
 const getVaccinationStatus = (vac) => (vac ? 'вакцинирован': 'невакцинирован');
 
 const getImage = (shelter, record) => {
-    return `/uploads/images/${shelter}/${record}.jpg`;
+    return `/uploads/images/${shelter.trim()}/${record}.jpg`;
 };
 
 const getAnimalsCurrentData = async (data) => {
@@ -97,7 +97,7 @@ const getAnimalsCurrentData = async (data) => {
         });
         const ShelterId = await Shelter.findOne({
             where: {
-                address: item.responsible.address,
+                address: item.responsible.address.trim(),
             }
         });
 

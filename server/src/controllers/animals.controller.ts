@@ -5,6 +5,8 @@ import {IMPORT_QUEUE} from "../const/queue";
 import { Animal, AnimalInterface } from "../models/animal.model";
 import {AuthPermission} from "../middleware/permissions.middleware";
 import {UpdateOptions} from "sequelize";
+import {Kind} from "../models/kind.model";
+import {Size} from "../models/size.model";
 
 class AnimalsController implements IControllerBase {
     public router = express.Router()

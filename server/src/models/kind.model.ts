@@ -1,5 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import {database} from "../config/database";
+import {Animal} from "./animal.model";
+import {Size} from "./size.model";
 
 export class Kind extends Model {
     public id!: number;
