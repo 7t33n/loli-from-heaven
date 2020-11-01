@@ -8,14 +8,10 @@
 export default {
   name: 'Index',
 
+  layout: 'admin',
+
   async middleware({ store }) {
     await store.dispatch('admin/FETCH_PAGES');
   },
-
-  layout: 'admin',
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

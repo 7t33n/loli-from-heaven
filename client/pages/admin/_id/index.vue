@@ -41,13 +41,14 @@
       :search="search"
       fixed-header
       class="elevation-1"
+      @click:row="handleTableItemCLick"
     />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index',
+  name: 'Index',
 
   data() {
     return {
@@ -109,10 +110,9 @@ export default {
     },
     addItem() {
     },
+    handleTableItemCLick(payload) {
+      console.log(payload);
+    },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
