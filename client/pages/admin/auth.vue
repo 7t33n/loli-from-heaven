@@ -1,5 +1,10 @@
 <template>
   <v-container align="center">
+    <v-switch
+      :label="themeSwitcherLabel"
+      class="align-self-auto"
+      @click="changeColorTheme"
+    />
     <h2>
       Вход в личный кабинет
     </h2>
@@ -41,9 +46,19 @@ export default {
     };
   },
 
+  computed: {
+    themeSwitcherLabel() {
+      return this.$vuetify.theme.dark ? 'включить свет' : 'выключить свет';
+    },
+  },
+
   methods: {
     handleSubmit() {
       this.$router.push('/admin');
+    },
+
+    changeColorTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };

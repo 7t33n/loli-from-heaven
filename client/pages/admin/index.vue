@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <v-container>
     index
-  </div>
+  </v-container>
 </template>
 
 <script>

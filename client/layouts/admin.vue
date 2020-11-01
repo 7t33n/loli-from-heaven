@@ -19,7 +19,7 @@
         dense
         nav
       >
-        <v-list-item nuxt to="/admin/">
+        <v-list-item nuxt to="/admin">
           <v-list-item-content>
             <v-list-item-title>Главная</v-list-item-title>
           </v-list-item-content>
@@ -61,6 +61,11 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app>
+      <v-switch
+        :label="themeSwitcherLabel"
+        class="align-self-auto"
+        @click="changeColorTheme"
+      />
       <v-btn class="ml-auto" @click="logOut">
         Выйти
       </v-btn>
@@ -97,10 +102,19 @@ export default {
     userPosition() {
       return 'userPosition';
     },
+
+    themeSwitcherLabel() {
+      return this.$vuetify.theme.dark ? 'включить свет' : 'выключить свет';
+    },
   },
 
   methods: {
     logOut() {
+      this.$router.push('/');
+    },
+
+    changeColorTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };
