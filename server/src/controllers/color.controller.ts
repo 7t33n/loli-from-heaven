@@ -1,11 +1,11 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
-import { Shelter, ShelterInterface } from "../models/shelter.modal";
-import {AuthPermission} from "../middleware/permissions.middleware";
+import {Color, ColorInterface} from "../models/color.model";
 import {UpdateOptions} from "sequelize";
+import {AuthPermission} from "../middleware/permissions.middleware";
 
-class ShelterController implements IControllerBase {
+class ColorController implements IControllerBase {
     public router = express.Router()
 
     constructor() {
@@ -13,18 +13,18 @@ class ShelterController implements IControllerBase {
     }
 
     public initRoutes(): IRouter {
-        this.router.get('/directory/shelter', this.get);
-        this.router.post('/directory/shelter', AuthPermission, this.post);
-        this.router.get('/directory/shelter/:id', this.getById);
-        this.router.put('/directory/shelter/:id', AuthPermission, this.put);
-        this.router.delete('/directory/shelter/:id', AuthPermission, this.delete);
+        this.router.get('/directory/color', this.get);
+        this.router.post('/directory/color', AuthPermission, this.post);
+        this.router.get('/directory/color/:id', this.getById);
+        this.router.put('/directory/color/:id', AuthPermission, this.put);
+        this.router.delete('/directory/color/:id', AuthPermission, this.delete);
         return this.router;
     }
 
     get = async (req: Request, res: Response) => {
         try {
-            const shelters: Array<Shelter> = await Shelter.findAll<Shelter>();
-            res.status(200).json(shelters)
+            const colors: Array<Color> = await Color.findAll<Color>();
+            res.status(200).json(colors)
         } catch (err) {
             res.status(500).json(err);
         }
@@ -34,8 +34,8 @@ class ShelterController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                const shelter: Shelter = await Shelter.findOne<Shelter>({ where: { id, } });
-                res.status(201).json(shelter);
+                const color: Color = await Color.findOne<Color>({ where: { id, } });
+                res.status(201).json(color);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -44,11 +44,11 @@ class ShelterController implements IControllerBase {
     }
 
     post = async (req: Request, res: Response) => {
-        const params: ShelterInterface = req.body;
-        if (params) {
+        const params: ColorInterface = req.body;
+        if (params && params.value) {
             try {
-                const shelter: Shelter = await Shelter.create<Shelter>(params);
-                res.status(201).json(shelter);
+                const color: Color = await Color.create<Color>(params);
+                res.status(201).json(color);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -58,14 +58,14 @@ class ShelterController implements IControllerBase {
 
     put = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const params: ShelterInterface = req.body;
+        const params: ColorInterface = req.body;
         const update: UpdateOptions = {
             where: { id },
             limit: 1,
         }
-        if (id && params) {
+        if (id && params && params.value) {
             try {
-                await Shelter.update<Shelter>(params, update);
+                await Color.update<Color>(params, update);
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -78,7 +78,7 @@ class ShelterController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                await Shelter.destroy<Shelter>({ where: {id}});
+                await Color.destroy<Color>({ where: {id}});
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -88,4 +88,4 @@ class ShelterController implements IControllerBase {
     }
 }
 
-export default ShelterController
+export default ColorController

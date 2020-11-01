@@ -7,10 +7,10 @@
             Личный кабинет
           </v-list-item-title>
           <v-list-item-subtitle>
-            username
+            {{ userName }}
           </v-list-item-subtitle>
           <v-list-item-subtitle>
-            user position
+            {{ userPosition }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -19,7 +19,7 @@
         dense
         nav
       >
-        <v-list-item nuxt to="/admin/">
+        <v-list-item nuxt to="/admin">
           <v-list-item-content>
             <v-list-item-title>Главная</v-list-item-title>
           </v-list-item-content>
@@ -61,6 +61,11 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app>
+      <v-switch
+        :label="themeSwitcherLabel"
+        class="align-self-auto"
+        @click="changeColorTheme"
+      />
       <v-btn class="ml-auto" @click="logOut">
         Выйти
       </v-btn>
@@ -89,15 +94,28 @@ export default {
       const page = this.$store.state.admin.current;
       return page ? page.name : 'Default Name';
     },
+
+    userName() {
+      return 'Пупкин И.В.';
+    },
+
+    userPosition() {
+      return 'Представитель департамента';
+    },
+
+    themeSwitcherLabel() {
+      return this.$vuetify.theme.dark ? 'включить свет' : 'выключить свет';
+    },
   },
 
   methods: {
     logOut() {
+      this.$router.push('/');
+    },
+
+    changeColorTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };
 </script>
-
-<style scoped>
-
-</style>

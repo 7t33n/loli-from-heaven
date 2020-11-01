@@ -1,0 +1,778 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Swagger documentation",
+    "version": "1.0.0",
+    "title": "Swagger Doc",
+    "contact": {
+      "email": "mroxotnik.app@gmail.com"
+    }
+  },
+  "host": "api-loli.7t33n.ru",
+  "schemes": ["https"],
+  "basePath": "/api/v1",
+  "paths": {
+    "/directory/sex": {
+      "get": {
+        "tags": ["Directory/Sex"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение всех гендеров животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Directory/Sex"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Sex"
+            }
+          }
+        ],
+        "description": "Получение всех гендеров животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/sex/{id}": {
+      "get": {
+        "tags": ["Directory/Sex"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение гендера животного по id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "200": {
+            "description": "Correct"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Directory/Sex"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Sex"
+            }
+          }
+        ],
+        "description": "Обновление данных по id",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Directory/Sex"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Удаление данных из справочника",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/kind": {
+      "get": {
+        "tags": ["Directory/Kind"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение всех видов животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Directory/Kind"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Kind"
+            }
+          }
+        ],
+        "description": "Создание вида животного",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/kind/{id}": {
+      "get": {
+        "tags": ["Directory/Kind"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение вида животного по id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "200": {
+            "description": "Correct"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Directory/Kind"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Kind"
+            }
+          }
+        ],
+        "description": "Обновление данных по id",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Directory/Kind"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Удаление данных из справочника",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/size": {
+      "get": {
+        "tags": ["Directory/Size"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение всех размеров животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Directory/Size"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Size"
+            }
+          }
+        ],
+        "description": "Создание размеров животного",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/size/{id}": {
+      "get": {
+        "tags": ["Directory/Size"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение размера животного по id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "200": {
+            "description": "Correct"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Directory/Size"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Size"
+            }
+          }
+        ],
+        "description": "Обновление данных по id",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Directory/Size"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Удаление данных из справочника",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/ears": {
+      "get": {
+        "tags": ["Directory/Ears"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение всех ушей животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Directory/Ears"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ears"
+            }
+          }
+        ],
+        "description": "Создание ушей животного",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/ears/{id}": {
+      "get": {
+        "tags": ["Directory/Ears"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение ушей животного по id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "200": {
+            "description": "Correct"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Directory/Ears"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ears"
+            }
+          }
+        ],
+        "description": "Обновление данных по id",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Directory/Ears"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Удаление данных из справочника",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/furs": {
+      "get": {
+        "tags": ["Directory/Furs"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение всех видов шерсти животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Directory/Furs"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ears"
+            }
+          }
+        ],
+        "description": "Создание нового вида шерсти для животных",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    },
+    "/directory/furs/{id}": {
+      "get": {
+        "tags": ["Directory/Furs"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Получение шерсти животного по id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "200": {
+            "description": "Correct"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Directory/Furs"],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ears"
+            }
+          }
+        ],
+        "description": "Обновление данных по id",
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Directory/Furs"],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Удаление данных из справочника",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error"
+          },
+          "201": {
+            "description": "Correct"
+          },
+          "400": {
+            "description": "params incorrect"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Sex": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "value": {
+          "type": "string",
+          "description": "кошка"
+        }
+      }
+    },
+    "Kind": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "value": {
+          "type": "string",
+          "description": "кошка"
+        }
+      }
+    },
+    "Size": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "value": {
+          "type": "string",
+          "description": "кошка"
+        }
+      }
+    },
+    "Ears": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "value": {
+          "type": "string",
+          "description": "кошка"
+        }
+      }
+    },
+    "Furs": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "value": {
+          "type": "string",
+          "description": "кошка"
+        }
+      }
+    }
+  }
+}
