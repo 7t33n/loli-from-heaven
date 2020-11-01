@@ -19,10 +19,12 @@
               v-for="(item, n) in animals"
               :key="n"
               :cols="4"
+              lg="4"
               md="6"
               sm="6"
             >
               <animal-card
+                :id="item.id"
                 :name="item.general.nickname"
                 :gender="item.general.sex"
                 :age="item.general.year"
@@ -56,12 +58,12 @@ export default {
       };
     },
     animals() {
-      return this.$store.state.animals.current;
+      return this.$store.state.animals.data;
     },
   },
 
   async middleware({ store }) {
-    await store.dispatch('animals/FETCH_PAGES');
+    await store.dispatch('animals/FETCH_DATA');
   },
 };
 </script>

@@ -1,0 +1,118 @@
+<template>
+  <div class="animal-adopt">
+    <form action="" class="animal-adopt__form">
+      <animal-back-button class="animal-adopt__back" />
+      <app-picture class="animal-adopt__kotik" src="kotik.png" />
+      <app-picture class="animal-adopt__pesik" src="pesik.png" />
+      <div class="animal-adopt__title">
+        Забрать друга к себе
+      </div>
+      <input
+        placeholder="Имя" name="name"
+        type="text" class="animal-adopt__input"
+      >
+      <input
+        placeholder="Номер телефона" name="phone"
+        type="text" class="animal-adopt__input"
+      >
+      <input
+        placeholder="*E-mail" name="email"
+        type="text" class="animal-adopt__input"
+      >
+      <textarea
+        class="animal-adopt__textarea" name="comment"
+        placeholder="Ваш комментарий"
+      />
+      <!--TODO: get address and schedule by id-->
+      <button class="animal-adopt__button">
+        отправить заявку
+      </button>
+    </form>
+  </div>
+</template>
+<script>
+import AnimalBackButton from '@/components/general/AnimalBackButton';
+import AppPicture from '@/components/general/AppPicture';
+
+export default {
+  components: { AppPicture, AnimalBackButton },
+};
+</script>
+
+<style lang="scss" scoped>
+  .animal-adopt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__back {
+      position: absolute;
+      top: 31px;
+      left: -110px;
+    }
+
+    &__form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 35px 100px 40px;
+      border-radius: 16px;
+      box-shadow: 4px 4px 18px rgba(68, 68, 68, .16);
+    }
+
+    &__title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #212121;
+    }
+
+    &__kotik {
+      position: absolute;
+    }
+
+    &__pesik {
+      position: absolute;
+    }
+
+    &__input {
+      margin-top: 30px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      border: 1px solid #C9C9C9;
+
+      &::placeholder {
+        color: #6F6F6F;
+        font-size: 14px;
+      }
+    }
+
+    &__textarea {
+      min-height: 128px;
+      margin-top: 30px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      border: 1px solid #C9C9C9;
+
+      &::placeholder {
+        color: #6F6F6F;
+        font-size: 14px;
+      }
+    }
+
+    &__button {
+      display: flex;
+      margin-top: 30px;
+      padding: 14px 50px;
+      border-radius: 8px;
+      background: #3CA6CD;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+</style>

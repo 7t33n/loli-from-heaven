@@ -10,7 +10,9 @@
         Вы можете выбрать себе друга и забрать к себе <br>
         домой, оставив заявку.
       </p>
-      <a class="main__button" href="/AnimalList">Выбрать друга</a>
+      <nuxt-link class="main__button" to="/AnimalList">
+        Выбрать друга
+      </nuxt-link>
     </div>
   </div>
 </template>
