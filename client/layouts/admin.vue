@@ -96,11 +96,11 @@ export default {
     },
 
     userName() {
-      return 'username';
+      return 'Пупкин И.В.';
     },
 
     userPosition() {
-      return 'userPosition';
+      return 'Представитель департамента';
     },
 
     themeSwitcherLabel() {
