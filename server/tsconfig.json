@@ -7,9 +7,6 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "experimentalDecorators": true,
-    "paths": {
-      "@/*": ["src/*"]
-    }
   },
   "files": [
     "./node_modules/@types/mocha/index.d.ts",

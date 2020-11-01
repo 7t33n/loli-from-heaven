@@ -1,16 +1,18 @@
 import { DataTypes, Model } from "sequelize";
 import {database} from "../config/database";
+import {Kind} from "./kind.model";
 
-export class Sex extends Model {
+export class Fur extends Model {
     public id!: number;
     public value!: string;
 }
 
-export interface SexInterface {
+export interface FurInterface {
     value: string;
+    KindId: number;
 }
 
-Sex.init(
+Fur.init(
     {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -20,13 +22,14 @@ Sex.init(
         value: {
             type: new DataTypes.STRING(128),
             unique: true,
+            allowNull: false,
         },
     },
     {
-        tableName: 'sexes',
+        tableName: 'furs',
         sequelize: database,
     }
 );
 
-Sex.sync()
-    .then(() => console.log('Sex table was created!'));
+Fur.sync()
+    .then(() => console.log('Fur table was created!'));

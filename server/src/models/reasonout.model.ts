@@ -1,16 +1,16 @@
 import { DataTypes, Model } from "sequelize";
 import {database} from "../config/database";
 
-export class Sex extends Model {
+export class Reasonout extends Model {
     public id!: number;
     public value!: string;
 }
 
-export interface SexInterface {
+export interface ReasonoutInterface {
     value: string;
 }
 
-Sex.init(
+Reasonout.init(
     {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -23,10 +23,10 @@ Sex.init(
         },
     },
     {
-        tableName: 'sexes',
+        tableName: 'reasonouts',
         sequelize: database,
     }
 );
 
-Sex.sync()
-    .then(() => console.log('Sex table was created!'));
+Reasonout.sync()
+    .then(() => console.log('Reasonout table was created!'));

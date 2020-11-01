@@ -1,16 +1,16 @@
 import { DataTypes, Model } from "sequelize";
 import {database} from "../config/database";
 
-export class Sex extends Model {
+export class Size extends Model {
     public id!: number;
     public value!: string;
 }
 
-export interface SexInterface {
+export interface SizeInterface {
     value: string;
 }
 
-Sex.init(
+Size.init(
     {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -23,10 +23,10 @@ Sex.init(
         },
     },
     {
-        tableName: 'sexes',
+        tableName: 'sizes',
         sequelize: database,
     }
 );
 
-Sex.sync()
-    .then(() => console.log('Sex table was created!'));
+Size.sync()
+    .then(() => console.log('Size table was created!'));

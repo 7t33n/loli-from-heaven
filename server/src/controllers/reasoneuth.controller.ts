@@ -1,11 +1,11 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
-import {Sex, SexInterface} from "../models/sex.model";
-import {UpdateOptions} from "sequelize";
+import { Reasoneuth, ReasoneuthInterface } from "../models/reasoneuth.model";
 import {AuthPermission} from "../middleware/permissions.middleware";
+import {UpdateOptions} from "sequelize";
 
-class SexController implements IControllerBase {
+class ReasoneuthController implements IControllerBase {
     public router = express.Router()
 
     constructor() {
@@ -13,18 +13,18 @@ class SexController implements IControllerBase {
     }
 
     public initRoutes(): IRouter {
-        this.router.get('/directory/sex', this.get);
-        this.router.post('/directory/sex', AuthPermission, this.post);
-        this.router.get('/directory/sex/:id', this.getById);
-        this.router.put('/directory/sex/:id', AuthPermission, this.put);
-        this.router.delete('/directory/sex/:id', AuthPermission, this.delete);
+        this.router.get('/directory/reasoneuth', this.get);
+        this.router.post('/directory/reasoneuth', AuthPermission, this.post);
+        this.router.get('/directory/reasoneuth/:id', this.getById);
+        this.router.put('/directory/reasoneuth/:id', AuthPermission, this.put);
+        this.router.delete('/directory/reasoneuth/:id', AuthPermission, this.delete);
         return this.router;
     }
 
     get = async (req: Request, res: Response) => {
         try {
-            const sexes: Array<Sex> = await Sex.findAll<Sex>();
-            res.status(200).json(sexes)
+            const reasoneuths: Array<Reasoneuth> = await Reasoneuth.findAll<Reasoneuth>();
+            res.status(200).json(reasoneuths)
         } catch (err) {
             res.status(500).json(err);
         }
@@ -34,8 +34,8 @@ class SexController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                const sex: Sex = await Sex.findOne<Sex>({ where: { id, } });
-                res.status(201).json(sex);
+                const reasoneuth: Reasoneuth = await Reasoneuth.findOne<Reasoneuth>({ where: { id, } });
+                res.status(201).json(reasoneuth);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -44,11 +44,11 @@ class SexController implements IControllerBase {
     }
 
     post = async (req: Request, res: Response) => {
-        const params: SexInterface = req.body;
-        if (params && params.value) {
+        const params: ReasoneuthInterface = req.body;
+        if (params) {
             try {
-                const sex: Sex = await Sex.create<Sex>(params);
-                res.status(201).json(sex);
+                const reasoneuth: Reasoneuth = await Reasoneuth.create<Reasoneuth>(params);
+                res.status(201).json(reasoneuth);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -58,14 +58,14 @@ class SexController implements IControllerBase {
 
     put = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const params: SexInterface = req.body;
+        const params: ReasoneuthInterface = req.body;
         const update: UpdateOptions = {
             where: { id },
             limit: 1,
         }
-        if (id && params && params.value) {
+        if (id && params) {
             try {
-                await Sex.update<Sex>(params, update);
+                await Reasoneuth.update<Reasoneuth>(params, update);
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -78,7 +78,7 @@ class SexController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                await Sex.destroy<Sex>({ where: {id}});
+                await Reasoneuth.destroy<Reasoneuth>({ where: {id}});
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -88,4 +88,4 @@ class SexController implements IControllerBase {
     }
 }
 
-export default SexController
+export default ReasoneuthController

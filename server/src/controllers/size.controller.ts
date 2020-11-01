@@ -1,11 +1,11 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
-import {Sex, SexInterface} from "../models/sex.model";
+import {Size, SizeInterface} from "../models/size.model";
 import {UpdateOptions} from "sequelize";
 import {AuthPermission} from "../middleware/permissions.middleware";
 
-class SexController implements IControllerBase {
+class SizeController implements IControllerBase {
     public router = express.Router()
 
     constructor() {
@@ -13,18 +13,18 @@ class SexController implements IControllerBase {
     }
 
     public initRoutes(): IRouter {
-        this.router.get('/directory/sex', this.get);
-        this.router.post('/directory/sex', AuthPermission, this.post);
-        this.router.get('/directory/sex/:id', this.getById);
-        this.router.put('/directory/sex/:id', AuthPermission, this.put);
-        this.router.delete('/directory/sex/:id', AuthPermission, this.delete);
+        this.router.get('/directory/size', this.get);
+        this.router.post('/directory/size', AuthPermission, this.post);
+        this.router.get('/directory/size/:id', this.getById);
+        this.router.put('/directory/size/:id', AuthPermission, this.put);
+        this.router.delete('/directory/size/:id', AuthPermission, this.delete);
         return this.router;
     }
 
     get = async (req: Request, res: Response) => {
         try {
-            const sexes: Array<Sex> = await Sex.findAll<Sex>();
-            res.status(200).json(sexes)
+            const Sizes: Array<Size> = await Size.findAll<Size>();
+            res.status(200).json(Sizes)
         } catch (err) {
             res.status(500).json(err);
         }
@@ -34,8 +34,8 @@ class SexController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                const sex: Sex = await Sex.findOne<Sex>({ where: { id, } });
-                res.status(201).json(sex);
+                const size: Size = await Size.findOne<Size>({ where: { id, } });
+                res.status(201).json(size);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -44,11 +44,11 @@ class SexController implements IControllerBase {
     }
 
     post = async (req: Request, res: Response) => {
-        const params: SexInterface = req.body;
+        const params: SizeInterface = req.body;
         if (params && params.value) {
             try {
-                const sex: Sex = await Sex.create<Sex>(params);
-                res.status(201).json(sex);
+                const size: Size = await Size.create<Size>(params);
+                res.status(201).json(size);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -58,14 +58,14 @@ class SexController implements IControllerBase {
 
     put = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const params: SexInterface = req.body;
+        const params: SizeInterface = req.body;
         const update: UpdateOptions = {
             where: { id },
             limit: 1,
         }
         if (id && params && params.value) {
             try {
-                await Sex.update<Sex>(params, update);
+                await Size.update<Size>(params, update);
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -78,7 +78,7 @@ class SexController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                await Sex.destroy<Sex>({ where: {id}});
+                await Size.destroy<Size>({ where: {id}});
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -88,4 +88,4 @@ class SexController implements IControllerBase {
     }
 }
 
-export default SexController
+export default SizeController

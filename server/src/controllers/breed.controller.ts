@@ -1,11 +1,11 @@
 import * as express from 'express';
 import { Request, Response, IRouter } from 'express'
 import IControllerBase from './../interfaces/IControllerBase.interface'
-import {Sex, SexInterface} from "../models/sex.model";
+import {Breed, BreedInterface} from "../models/breed.model";
 import {UpdateOptions} from "sequelize";
 import {AuthPermission} from "../middleware/permissions.middleware";
 
-class SexController implements IControllerBase {
+class BreedController implements IControllerBase {
     public router = express.Router()
 
     constructor() {
@@ -13,18 +13,18 @@ class SexController implements IControllerBase {
     }
 
     public initRoutes(): IRouter {
-        this.router.get('/directory/sex', this.get);
-        this.router.post('/directory/sex', AuthPermission, this.post);
-        this.router.get('/directory/sex/:id', this.getById);
-        this.router.put('/directory/sex/:id', AuthPermission, this.put);
-        this.router.delete('/directory/sex/:id', AuthPermission, this.delete);
+        this.router.get('/directory/breed', this.get);
+        this.router.post('/directory/breed', AuthPermission, this.post);
+        this.router.get('/directory/breed/:id', this.getById);
+        this.router.put('/directory/breed/:id', AuthPermission, this.put);
+        this.router.delete('/directory/breed/:id', AuthPermission, this.delete);
         return this.router;
     }
 
     get = async (req: Request, res: Response) => {
         try {
-            const sexes: Array<Sex> = await Sex.findAll<Sex>();
-            res.status(200).json(sexes)
+            const breeds: Array<Breed> = await Breed.findAll<Breed>();
+            res.status(200).json(breeds)
         } catch (err) {
             res.status(500).json(err);
         }
@@ -34,8 +34,8 @@ class SexController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                const sex: Sex = await Sex.findOne<Sex>({ where: { id, } });
-                res.status(201).json(sex);
+                const breed: Breed = await Breed.findOne<Breed>({ where: { id, } });
+                res.status(201).json(breed);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -44,11 +44,11 @@ class SexController implements IControllerBase {
     }
 
     post = async (req: Request, res: Response) => {
-        const params: SexInterface = req.body;
+        const params: BreedInterface = req.body;
         if (params && params.value) {
             try {
-                const sex: Sex = await Sex.create<Sex>(params);
-                res.status(201).json(sex);
+                const breed: Breed = await Breed.create<Breed>(params);
+                res.status(201).json(breed);
             } catch (err) {
                 res.status(500).json(err)
             }
@@ -58,14 +58,14 @@ class SexController implements IControllerBase {
 
     put = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const params: SexInterface = req.body;
+        const params: BreedInterface = req.body;
         const update: UpdateOptions = {
             where: { id },
             limit: 1,
         }
         if (id && params && params.value) {
             try {
-                await Sex.update<Sex>(params, update);
+                await Breed.update<Breed>(params, update);
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -78,7 +78,7 @@ class SexController implements IControllerBase {
         const { id } = req.params;
         if (id) {
             try {
-                await Sex.destroy<Sex>({ where: {id}});
+                await Breed.destroy<Breed>({ where: {id}});
                 res.status(201).json({data: 'success'})
             } catch (err) {
                 res.status(500).json(err)
@@ -88,4 +88,4 @@ class SexController implements IControllerBase {
     }
 }
 
-export default SexController
+export default BreedController
