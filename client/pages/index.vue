@@ -1,6 +1,7 @@
 <template>
   <div class="main">
-    <app-picture class="main__background" src="bg.png" />
+    <img class="main__background main__background_1" src="/images/main-bg1.png">
+    <img class="main__background main__background_2" src="/images/main-bg2.png">
     <div class="main__content">
       <h1 class="main__title">
         Возьми друга <br> из приюта!
@@ -18,10 +19,8 @@
 </template>
 
 <script>
-import AppPicture from '@/components/general/AppPicture';
 
 export default {
-  components: { AppPicture },
   computed: {
     /**
      * Подключение SEO с помощью тега функция head прдоставляемой Nuxt
@@ -43,10 +42,16 @@ export default {
     &__background {
       position: absolute;
       top: 0;
-      right: 0;
       bottom: 0;
-      left: 0;
-      background-color: white;
+      height: 100%;
+
+      &_1 {
+        left: 0;
+      }
+
+      &_2 {
+        right: 0;
+      }
     }
 
     &__content {
@@ -57,6 +62,7 @@ export default {
     &__title {
       font-family: "Montserrat-Bold", sans-serif;
       font-size: 72px;
+      line-height: 84px;
     }
 
     &__description {

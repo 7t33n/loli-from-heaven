@@ -1,30 +1,30 @@
 <template>
-  <div class="animal-adopt">
-    <form action="" class="animal-adopt__form">
-      <animal-back-button class="animal-adopt__back" />
-      <img class="animal-adopt__kotik" src="/images/kotik.png">
-      <img class="animal-adopt__pesik" src="/images/pesik.png">
-      <div class="animal-adopt__title">
+  <div class="animal-homeless">
+    <form action="" class="animal-homeless__form">
+      <animal-back-button class="animal-homeless__back" />
+      <img class="animal-homeless__kotik" src="/images/kotik.png">
+      <img class="animal-homeless__pesik" src="/images/pesik.png">
+      <div class="animal-homeless__title">
         Забрать друга к себе
       </div>
       <input
         placeholder="Имя" name="name"
-        type="text" class="animal-adopt__input"
+        type="text" class="animal-homeless__input"
       >
       <input
         placeholder="Номер телефона" name="phone"
-        type="text" class="animal-adopt__input"
+        type="text" class="animal-homeless__input"
       >
       <input
         placeholder="*E-mail" name="email"
-        type="text" class="animal-adopt__input"
+        type="text" class="animal-homeless__input"
       >
       <textarea
-        class="animal-adopt__textarea" name="comment"
+        class="animal-homeless__textarea" name="comment"
         placeholder="Ваш комментарий"
       />
-      <!--TODO: get address and schedule by id-->
-      <button class="animal-adopt__button">
+      <pre>{{ this.$store.state.shelters.data }}</pre>
+      <button class="animal-homeless__button">
         отправить заявку
       </button>
     </form>
@@ -35,11 +35,15 @@ import AnimalBackButton from '@/components/general/AnimalBackButton';
 
 export default {
   components: { AnimalBackButton },
+  async middleware({ store }) {
+    await store.dispatch('shelters/FETCH_DATA');
+    console.log(this.$store.state.shelters.data);
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-  .animal-adopt {
+  .animal-homeless {
     display: flex;
     justify-content: center;
     align-items: center;

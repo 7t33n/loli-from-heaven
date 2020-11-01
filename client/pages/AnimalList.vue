@@ -58,7 +58,7 @@ export default {
       };
     },
     animals() {
-      return this.$store.state.animals.data;
+      return this.$store.state.animals.data.slice(0, 12);
     },
   },
 
