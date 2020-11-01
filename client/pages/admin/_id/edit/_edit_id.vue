@@ -1,7 +1,7 @@
 <template>
   <v-form>
     <h2>
-      Edit or add item
+      Edit or add or watch item
     </h2>
     <br>
     <v-text-field
@@ -32,12 +32,15 @@ export default {
 
   layout: 'admin',
 
-  async middleware({ store }) {
+  async middleware({ store, route }) {
     await store.dispatch('admin/FETCH_PAGES');
+    await store.dispatch('admin/FETCH_PAGE_BY_ID', route.params.id);
   },
 
   methods: {
     handleSubmit() {
+      console.log(`/admin/${this.$store.state.admin.current.type}`);
+      // this.$router.push(`/admin/${this.$store.state.admin.current.type}`);
     },
   },
 };

@@ -25,6 +25,10 @@
           Добавить строку
         </v-btn>
       </v-col>
+      <v-spacer />
+      <v-spacer />
+      <v-spacer />
+      <v-spacer />
     </v-row>
     <v-file-input label="Загрузить таблицу" />
     <v-text-field
@@ -40,7 +44,6 @@
       :items-per-page="5"
       :search="search"
       fixed-header
-      class="elevation-1"
       @click:row="handleTableItemCLick"
     />
   </div>
@@ -49,6 +52,8 @@
 <script>
 export default {
   name: 'Index',
+
+  layout: 'admin',
 
   data() {
     return {
@@ -100,8 +105,6 @@ export default {
     await store.dispatch('admin/FETCH_PAGES');
     await store.dispatch('admin/FETCH_PAGE_BY_ID', route.params.id);
   },
-
-  layout: 'admin',
 
   methods: {
     downloadTemplate() {

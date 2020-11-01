@@ -7,10 +7,10 @@
             Личный кабинет
           </v-list-item-title>
           <v-list-item-subtitle>
-            username
+            {{ userName }}
           </v-list-item-subtitle>
           <v-list-item-subtitle>
-            user position
+            {{ userPosition }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -88,6 +88,14 @@ export default {
     pageHeader() {
       const page = this.$store.state.admin.current;
       return page ? page.name : 'Default Name';
+    },
+
+    userName() {
+      return 'username';
+    },
+
+    userPosition() {
+      return 'userPosition';
     },
   },
 
